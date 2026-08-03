@@ -9,33 +9,111 @@ const movies = [
 
 export default function Home() {
   return (
-    <>
-      <section className="hero">
-        <div className="hero-content">
-          <span className="badge">NETTIFY ORIGINAL</span>
-          <h1>Discover your next<br /><span>favorite story.</span></h1>
-          <p>ค้นพบภาพยนตร์และซีรีส์ที่น่าสนใจ พร้อมข้อมูลที่ค้นหาได้ง่ายในที่เดียว</p>
+    <main>
+
+      {/* HERO */}
+      <section className="hero-modern">
+        <div className="hero-overlay" />
+
+        <div className="hero-content-modern">
+          <span className="badge-modern">
+            ✦ NETTIFY ORIGINAL
+          </span>
+
+          <h1>
+            Discover your next
+            <br />
+            <span>favorite story.</span>
+          </h1>
+
+          <p>
+            Explore movies and series with stunning visuals,
+            ratings and details — all in one premium experience.
+          </p>
+
           <div className="actions">
-            <Link href="/movies" className="btn primary">สำรวจหนัง →</Link>
-            <Link href="/about" className="btn secondary">เกี่ยวกับ Nettify</Link>
+            <Link href="/movies" className="btn-modern primary">
+              Explore Movies →
+            </Link>
+
+            <Link href="/about" className="btn-modern secondary">
+              About Nettify
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="section-head">
-          <div><span className="eyebrow">TRENDING NOW</span><h2>กำลังเป็นที่นิยม</h2></div>
-          <Link href="/movies" className="view-all">ดูทั้งหมด →</Link>
+
+      {/* TRENDING */}
+      <section className="movies-section">
+
+        <div className="section-header">
+
+          <div>
+            <span className="eyebrow">
+              TRENDING NOW
+            </span>
+
+            <h2>
+              Popular Right Now
+            </h2>
+          </div>
+
+
+          <Link href="/movies" className="view-all">
+            View All →
+          </Link>
+
         </div>
-        <div className="grid">
-          {movies.map((m) => (
-            <article className="movie-card" key={m.title}>
-              <div className="poster">{m.icon}<span>NETTIFY</span></div>
-              <div className="card-info"><h3>{m.title}</h3><p>{m.genre} • {m.year}</p><strong>★ {m.rating}</strong></div>
+
+
+        <div className="movie-grid">
+
+          {movies.map((movie) => (
+
+            <article
+              className="modern-card"
+              key={movie.title}
+            >
+
+              <div className="poster-modern">
+
+                <div className="poster-icon">
+                  {movie.icon}
+                </div>
+
+                <span>
+                  NETTIFY
+                </span>
+
+              </div>
+
+
+              <div className="movie-info">
+
+                <h3>
+                  {movie.title}
+                </h3>
+
+                <p>
+                  {movie.genre} • {movie.year}
+                </p>
+
+
+                <div className="rating">
+                  ★ {movie.rating}
+                </div>
+
+              </div>
+
             </article>
+
           ))}
+
         </div>
+
       </section>
-    </>
+
+    </main>
   );
 }
