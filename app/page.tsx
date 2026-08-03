@@ -1,22 +1,44 @@
 import Link from "next/link";
 
 const movies = [
-  { title: "Shadow Protocol", genre: "Action", year: 2026, rating: "8.7", icon: "🕶️" },
-  { title: "Lost Planet", genre: "Sci-Fi", year: 2025, rating: "8.3", icon: "🪐" },
-  { title: "Midnight Case", genre: "Mystery", year: 2026, rating: "8.9", icon: "🌙" },
-  { title: "The Last Signal", genre: "Thriller", year: 2025, rating: "8.1", icon: "📡" },
+  {
+    title: "Shadow Protocol",
+    genre: "Action",
+    year: 2026,
+    rating: "8.7",
+    icon: "🕶️",
+  },
+  {
+    title: "Lost Planet",
+    genre: "Sci-Fi",
+    year: 2025,
+    rating: "8.3",
+    icon: "🪐",
+  },
+  {
+    title: "Midnight Case",
+    genre: "Mystery",
+    year: 2026,
+    rating: "8.9",
+    icon: "🌙",
+  },
+  {
+    title: "The Last Signal",
+    genre: "Thriller",
+    year: 2025,
+    rating: "8.1",
+    icon: "📡",
+  },
 ];
 
 export default function Home() {
   return (
     <main>
 
-      {/* HERO */}
-      <section className="hero-modern">
-        <div className="hero-overlay" />
+      <section className="hero">
+        <div className="hero-content">
 
-        <div className="hero-content-modern">
-          <span className="badge-modern">
+          <span className="badge">
             ✦ NETTIFY ORIGINAL
           </span>
 
@@ -27,27 +49,40 @@ export default function Home() {
           </h1>
 
           <p>
-            Explore movies and series with stunning visuals,
-            ratings and details — all in one premium experience.
+            Explore movies and series with ratings,
+            genres and details in one modern platform.
           </p>
 
+
           <div className="actions">
-            <Link href="/movies" className="btn-modern primary">
+
+            <Link
+              href="/movies"
+              className="btn primary"
+              aria-label="Explore movies"
+            >
               Explore Movies →
             </Link>
 
-            <Link href="/about" className="btn-modern secondary">
+
+            <Link
+              href="/about"
+              className="btn secondary"
+              aria-label="Learn about Nettify"
+            >
               About Nettify
             </Link>
+
           </div>
+
         </div>
       </section>
 
 
-      {/* TRENDING */}
-      <section className="movies-section">
 
-        <div className="section-header">
+      <section className="section">
+
+        <div className="section-head">
 
           <div>
             <span className="eyebrow">
@@ -55,54 +90,59 @@ export default function Home() {
             </span>
 
             <h2>
-              Popular Right Now
+              Popular Movies
             </h2>
           </div>
 
 
-          <Link href="/movies" className="view-all">
+          <Link
+            href="/movies"
+            className="view-all"
+          >
             View All →
           </Link>
 
         </div>
 
 
-        <div className="movie-grid">
+
+        <div className="grid">
 
           {movies.map((movie) => (
 
             <article
-              className="modern-card"
+              className="movie-card"
               key={movie.title}
             >
 
-              <div className="poster-modern">
+              <div className="poster">
 
-                <div className="poster-icon">
+                <span className="movie-icon">
                   {movie.icon}
-                </div>
-
-                <span>
-                  NETTIFY
                 </span>
+
+                <small>
+                  NETTIFY
+                </small>
 
               </div>
 
 
-              <div className="movie-info">
+              <div className="card-info">
 
                 <h3>
                   {movie.title}
                 </h3>
+
 
                 <p>
                   {movie.genre} • {movie.year}
                 </p>
 
 
-                <div className="rating">
+                <strong>
                   ★ {movie.rating}
-                </div>
+                </strong>
 
               </div>
 
