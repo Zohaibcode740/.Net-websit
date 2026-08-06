@@ -1,6 +1,6 @@
 # Z Volt
 
-Movie website project for submission: **Next.js + TypeScript + Supabase + Vercel**
+Movies website project for submission: **Next.js + TypeScript + Supabase + Vercel**
 
 ## 1) Installation
 
@@ -42,7 +42,7 @@ git push -u origin main
 Import the GitHub repository into Vercel, then add the same two environment variables used in `.env.local`.
 
 After that, deploy the project.
-
+ you will this website
 ## Website Pages
 
 * `/` — Home
